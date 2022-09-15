@@ -118,7 +118,7 @@
         subnet_id: "{{pubsub1_out.subnet.id.id}}"
         wait: yes
         region: "{{region}}"
-        if_exist_do_not_create: true
+        if_exist_do_not_create: yes
       register: NATGW_out
 
     - name: Set up private subnet route table
