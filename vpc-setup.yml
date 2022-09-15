@@ -115,7 +115,7 @@
     - name: Creaet a new nat gateway and allcoate new EIP if a natgateway does not yet exist in the subnet
       ec2_vpc_nat_gateway:
         state: "{{state}}"
-        subnet_id: "{{pubsub1_out.subnet.id.id}}"
+        subnet_id: "{{pubsub1_out.subnet.id}}"
         wait: yes
         region: "{{region}}"
         if_exist_do_not_create: true
