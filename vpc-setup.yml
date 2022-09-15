@@ -101,7 +101,7 @@
       ec2_vpc_route_table:
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{region}}"
-        tags:
+        resource_tags:
           Name: vprofile_PubRT
         subnets:
           - "{{pubsub1_out.subnet.id}}"
@@ -110,7 +110,7 @@
         routes:
           - dest: 0.0.0.0/0
             gateway_id: "{{igw_out.gateway_id}}"
-        register: pubrt_out
+      register: pubrt_out
 
 
     
