@@ -118,6 +118,8 @@
         subnet_id: "{{pubsub1_out.subnet.id}}"
         wait: yes
         region: "{{region}}"
+        resource_tags:
+          Name: VProfile_NatGW
         if_exist_do_not_create: true
       register: NATGW_out
 
