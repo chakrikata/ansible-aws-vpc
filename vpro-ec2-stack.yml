@@ -193,7 +193,7 @@
 
     - name: Insert/Update Host IP and name in file provision-stack/group_vars/hostsip
       blockinfile: 
-        path: provision-stack/group_vars/hostsip
+        path: provision-stack/group_vars/hostsip.txt
         block: |
           web01_ip: {{web01_out.tagged_instances[0].private_ip}}
           app01_ip: {{app01_out.tagged_instances[0].private_ip}}
@@ -209,7 +209,7 @@
 
     - name: Insert/Update Inventory file provision-stack/inventory-vpro
       blockinfile:
-        path: provision-stack/inventory-vpro
+        path: provision-stack/inventory-vpro.txt
         block: |
           web01 ansible_host={{web01_out.tagged_instances[0].private_ip}}
           app01 ansible_host={{app01_out.tagged_instances[0].private_ip}}
