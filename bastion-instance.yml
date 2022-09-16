@@ -57,6 +57,12 @@
         vpc_subnet_id: "{{pubsub1id}}"
       register: bastionHost_out
 
+    - name: Inser/Update 'BastionSGid' in vars/vpc-output_vars.txt
+      blockinfile:
+        path: vars/vpc-output_vars.txt
+        backup: yes
+        block:
+          BastionSGid: {{BastionSG_out.group_id}}
 
 
 
