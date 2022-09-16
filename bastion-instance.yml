@@ -61,8 +61,8 @@
       blockinfile:
         path: vars/vpc-output_vars.txt
         backup: yes
-        block:
-          BastionSGid: '{{ BastionSG_out.group_id }}'
+        block: |
+          BastionSGid: {{ BastionSG_out.group_id }}
 
 
 
