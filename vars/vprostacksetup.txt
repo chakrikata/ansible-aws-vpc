@@ -1,8 +1,8 @@
 region: us-east-1
-nginx_ami: ami-0ee23bfc74a881de5
-tomcat_ami: ami-0ee23bfc74a881de5
-memchache_ami: ami-0ee23bfc74a881de5
-rmq_ami: ami-0ee23bfc74a881de5
-mysql_ami: ami-0ee23bfc74a881de5
+nginx_ami: ami-08d4ac5b634553e16
+tomcat_ami: ami-08d4ac5b634553e16
+memchache_ami: ami-08d4ac5b634553e16
+rmq_ami: ami-08d4ac5b634553e16
+mysql_ami: ami-08d4ac5b634553e16
 
 
