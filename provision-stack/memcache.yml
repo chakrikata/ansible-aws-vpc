@@ -6,7 +6,7 @@
   tasks:
     - name: Install Memcached
       apt:
-        name: Memcached
+        name: memcached
         state: present
         update_cache: yes
         cache_valid_time: 86400
@@ -15,7 +15,7 @@
 
     - name: Start & Enable memcache
       service:
-        name: Memcached
+        name: memcached
         state: started
         enabled: yes
       tags:
