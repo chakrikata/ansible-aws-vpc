@@ -2,6 +2,7 @@
 - name: Install memcache, start & enable svc
   hosts: mcsrvgrp
   gather_facts: no
+  become: yes
   tasks:
     - name: Install Memcached
       apt:
