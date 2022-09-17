@@ -1,0 +1,116 @@
+2022-09-17 09:42:35,592 p=1213 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifact & sql to files directory] ***************
+2022-09-17 09:42:35,614 p=1213 u=ubuntu n=ansible | TASK [Gathering Facts] *********************************************************
+2022-09-17 09:42:36,987 p=1213 u=ubuntu n=ansible | ok: [localhost]
+2022-09-17 09:42:37,012 p=1213 u=ubuntu n=ansible | TASK [Install jdk, maven, git] *************************************************
+2022-09-17 09:42:45,790 p=1213 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2022-09-17 09:43:27,798 p=1213 u=ubuntu n=ansible | changed: [localhost] => (item=openjdk-8-jdk)
+2022-09-17 09:43:38,200 p=1213 u=ubuntu n=ansible | changed: [localhost] => (item=maven)
+2022-09-17 09:43:38,223 p=1213 u=ubuntu n=ansible | TASK [Clone source code from github] *******************************************
+2022-09-17 09:43:42,479 p=1213 u=ubuntu n=ansible | changed: [localhost]
+2022-09-17 09:43:42,495 p=1213 u=ubuntu n=ansible | TASK [mvn install command to build artifact] ***********************************
+2022-09-17 09:44:21,794 p=1213 u=ubuntu n=ansible | changed: [localhost]
+2022-09-17 09:44:21,819 p=1213 u=ubuntu n=ansible | TASK [copy artifacts to files directory] ***************************************
+2022-09-17 09:44:22,930 p=1213 u=ubuntu n=ansible | changed: [localhost] => (item=/home/ubuntu/ansible-aws-vpc/provision-stack/Vprofile-repo/target/vprofile-v2.war)
+2022-09-17 09:44:22,945 p=1213 u=ubuntu n=ansible | TASK [copy sql file to files directory] ****************************************
+2022-09-17 09:44:23,390 p=1213 u=ubuntu n=ansible | changed: [localhost]
+2022-09-17 09:44:23,415 p=1213 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2022-09-17 09:44:23,416 p=1213 u=ubuntu n=ansible | localhost                  : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:50:21,352 p=6157 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ***
+2022-09-17 09:50:21,376 p=6157 u=ubuntu n=ansible | TASK [Gathering Facts] *********************************************************
+2022-09-17 09:50:23,268 p=6157 u=ubuntu n=ansible | ok: [web01]
+2022-09-17 09:50:23,647 p=6157 u=ubuntu n=ansible | ok: [cntl]
+2022-09-17 09:50:24,051 p=6157 u=ubuntu n=ansible | ok: [app01]
+2022-09-17 09:50:24,085 p=6157 u=ubuntu n=ansible | ok: [mc01]
+2022-09-17 09:50:24,487 p=6157 u=ubuntu n=ansible | ok: [rmq01]
+2022-09-17 09:50:25,574 p=6157 u=ubuntu n=ansible | ok: [db01]
+2022-09-17 09:50:25,601 p=6157 u=ubuntu n=ansible | TASK [Import VPC setup variables] **********************************************
+2022-09-17 09:50:25,671 p=6157 u=ubuntu n=ansible | ok: [cntl]
+2022-09-17 09:50:25,711 p=6157 u=ubuntu n=ansible | ok: [web01]
+2022-09-17 09:50:25,751 p=6157 u=ubuntu n=ansible | ok: [app01]
+2022-09-17 09:50:25,787 p=6157 u=ubuntu n=ansible | ok: [rmq01]
+2022-09-17 09:50:25,790 p=6157 u=ubuntu n=ansible | ok: [mc01]
+2022-09-17 09:50:25,809 p=6157 u=ubuntu n=ansible | ok: [db01]
+2022-09-17 09:50:25,822 p=6157 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] *************************************
+2022-09-17 09:50:26,699 p=6157 u=ubuntu n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: PermissionError: [Errno 13] Permission denied: b'/home/ubuntu/.ansible/tmp/ansible-tmp-1663408226.1077018-6342-10003513272117/tmp2naq6acz' -> b'/etc/hosts'
+2022-09-17 09:50:26,700 p=6157 u=ubuntu n=ansible | fatal: [rmq01]: FAILED! => {"changed": false, "msg": "The destination directory (/etc) is not writable by the current user. Error was: [Errno 13] Permission denied: b'/etc/.ansible_tmppea4jfsahosts'"}
+2022-09-17 09:50:26,701 p=6157 u=ubuntu n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: PermissionError: [Errno 13] Permission denied: b'/home/ubuntu/.ansible/tmp/ansible-tmp-1663408225.9548666-6327-122673463878110/tmp7inplunp' -> b'/etc/hosts'
+2022-09-17 09:50:26,701 p=6157 u=ubuntu n=ansible | fatal: [web01]: FAILED! => {"changed": false, "msg": "The destination directory (/etc) is not writable by the current user. Error was: [Errno 13] Permission denied: b'/etc/.ansible_tmptm7ekjv3hosts'"}
+2022-09-17 09:50:26,701 p=6157 u=ubuntu n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: PermissionError: [Errno 13] Permission denied: b'/home/ubuntu/.ansible/tmp/ansible-tmp-1663408226.0391555-6333-140305304889272/tmpohxs6_3j' -> b'/etc/hosts'
+2022-09-17 09:50:26,702 p=6157 u=ubuntu n=ansible | fatal: [app01]: FAILED! => {"changed": false, "msg": "The destination directory (/etc) is not writable by the current user. Error was: [Errno 13] Permission denied: b'/etc/.ansible_tmpwap7s_qthosts'"}
+2022-09-17 09:50:26,702 p=6157 u=ubuntu n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: PermissionError: [Errno 13] Permission denied: b'/home/ubuntu/.ansible/tmp/ansible-tmp-1663408226.163529-6345-98239000775364/tmpnlb6kv1h' -> b'/etc/hosts'
+2022-09-17 09:50:26,702 p=6157 u=ubuntu n=ansible | fatal: [mc01]: FAILED! => {"changed": false, "msg": "The destination directory (/etc) is not writable by the current user. Error was: [Errno 13] Permission denied: b'/etc/.ansible_tmp4f1_2nuahosts'"}
+2022-09-17 09:50:26,750 p=6157 u=ubuntu n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: PermissionError: [Errno 13] Permission denied: b'/home/ubuntu/.ansible/tmp/ansible-tmp-1663408225.8836038-6326-3477817513755/tmp0bofhn0y' -> b'/etc/hosts'
+2022-09-17 09:50:26,751 p=6157 u=ubuntu n=ansible | fatal: [cntl]: FAILED! => {"changed": false, "msg": "The destination directory (/etc) is not writable by the current user. Error was: [Errno 13] Permission denied: b'/etc/.ansible_tmpl_4o10e1hosts'"}
+2022-09-17 09:50:27,020 p=6157 u=ubuntu n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: PermissionError: [Errno 13] Permission denied: b'/home/ubuntu/.ansible/tmp/ansible-tmp-1663408226.766716-6383-263744497819238/tmpd6x4faos' -> b'/etc/hosts'
+2022-09-17 09:50:27,021 p=6157 u=ubuntu n=ansible | fatal: [db01]: FAILED! => {"changed": false, "msg": "The destination directory (/etc) is not writable by the current user. Error was: [Errno 13] Permission denied: b'/etc/.ansible_tmpbmnlalhahosts'"}
+2022-09-17 09:50:27,024 p=6157 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2022-09-17 09:50:27,025 p=6157 u=ubuntu n=ansible | app01                      : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:50:27,025 p=6157 u=ubuntu n=ansible | cntl                       : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:50:27,025 p=6157 u=ubuntu n=ansible | db01                       : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:50:27,025 p=6157 u=ubuntu n=ansible | mc01                       : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:50:27,026 p=6157 u=ubuntu n=ansible | rmq01                      : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:50:27,026 p=6157 u=ubuntu n=ansible | web01                      : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:55:10,904 p=6427 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ***
+2022-09-17 09:55:10,918 p=6427 u=ubuntu n=ansible | TASK [Gathering Facts] *********************************************************
+2022-09-17 09:55:12,764 p=6427 u=ubuntu n=ansible | ok: [web01]
+2022-09-17 09:55:12,841 p=6427 u=ubuntu n=ansible | ok: [app01]
+2022-09-17 09:55:12,933 p=6427 u=ubuntu n=ansible | ok: [rmq01]
+2022-09-17 09:55:12,953 p=6427 u=ubuntu n=ansible | ok: [mc01]
+2022-09-17 09:55:12,967 p=6427 u=ubuntu n=ansible | ok: [cntl]
+2022-09-17 09:55:14,290 p=6427 u=ubuntu n=ansible | ok: [db01]
+2022-09-17 09:55:14,337 p=6427 u=ubuntu n=ansible | TASK [Import VPC setup variables] **********************************************
+2022-09-17 09:55:14,407 p=6427 u=ubuntu n=ansible | ok: [cntl]
+2022-09-17 09:55:14,447 p=6427 u=ubuntu n=ansible | ok: [web01]
+2022-09-17 09:55:14,483 p=6427 u=ubuntu n=ansible | ok: [app01]
+2022-09-17 09:55:14,519 p=6427 u=ubuntu n=ansible | ok: [rmq01]
+2022-09-17 09:55:14,525 p=6427 u=ubuntu n=ansible | ok: [mc01]
+2022-09-17 09:55:14,545 p=6427 u=ubuntu n=ansible | ok: [db01]
+2022-09-17 09:55:14,559 p=6427 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] *************************************
+2022-09-17 09:55:15,467 p=6427 u=ubuntu n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: PermissionError: [Errno 13] Permission denied: b'/home/ubuntu/.ansible/tmp/ansible-tmp-1663408514.786974-6602-254974223736580/tmpmg_2hdfr' -> b'/etc/hosts'
+2022-09-17 09:55:15,468 p=6427 u=ubuntu n=ansible | fatal: [app01]: FAILED! => {"changed": false, "msg": "The destination directory (/etc) is not writable by the current user. Error was: [Errno 13] Permission denied: b'/etc/.ansible_tmpipl2px8_hosts'"}
+2022-09-17 09:55:15,471 p=6427 u=ubuntu n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: PermissionError: [Errno 13] Permission denied: b'/home/ubuntu/.ansible/tmp/ansible-tmp-1663408514.9124622-6615-41185963080575/tmp9420o0rw' -> b'/etc/hosts'
+2022-09-17 09:55:15,471 p=6427 u=ubuntu n=ansible | fatal: [mc01]: FAILED! => {"changed": false, "msg": "The destination directory (/etc) is not writable by the current user. Error was: [Errno 13] Permission denied: b'/etc/.ansible_tmpaauhx25yhosts'"}
+2022-09-17 09:55:15,471 p=6427 u=ubuntu n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: PermissionError: [Errno 13] Permission denied: b'/home/ubuntu/.ansible/tmp/ansible-tmp-1663408514.8517196-6611-193551248641364/tmp92dso1op' -> b'/etc/hosts'
+2022-09-17 09:55:15,475 p=6427 u=ubuntu n=ansible | fatal: [rmq01]: FAILED! => {"changed": false, "msg": "The destination directory (/etc) is not writable by the current user. Error was: [Errno 13] Permission denied: b'/etc/.ansible_tmppkvjfbg1hosts'"}
+2022-09-17 09:55:15,475 p=6427 u=ubuntu n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: PermissionError: [Errno 13] Permission denied: b'/home/ubuntu/.ansible/tmp/ansible-tmp-1663408514.6998415-6597-149829435410837/tmpgbj_xu8s' -> b'/etc/hosts'
+2022-09-17 09:55:15,475 p=6427 u=ubuntu n=ansible | fatal: [web01]: FAILED! => {"changed": false, "msg": "The destination directory (/etc) is not writable by the current user. Error was: [Errno 13] Permission denied: b'/etc/.ansible_tmpu0hipur9hosts'"}
+2022-09-17 09:55:15,518 p=6427 u=ubuntu n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: PermissionError: [Errno 13] Permission denied: b'/home/ubuntu/.ansible/tmp/ansible-tmp-1663408514.6244326-6596-138085310504852/tmpz0xqtflx' -> b'/etc/hosts'
+2022-09-17 09:55:15,518 p=6427 u=ubuntu n=ansible | fatal: [cntl]: FAILED! => {"changed": false, "msg": "The destination directory (/etc) is not writable by the current user. Error was: [Errno 13] Permission denied: b'/etc/.ansible_tmp06qxn6b_hosts'"}
+2022-09-17 09:55:15,797 p=6427 u=ubuntu n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: PermissionError: [Errno 13] Permission denied: b'/home/ubuntu/.ansible/tmp/ansible-tmp-1663408515.5338802-6653-37011927710256/tmpz5kwg8_h' -> b'/etc/hosts'
+2022-09-17 09:55:15,798 p=6427 u=ubuntu n=ansible | fatal: [db01]: FAILED! => {"changed": false, "msg": "The destination directory (/etc) is not writable by the current user. Error was: [Errno 13] Permission denied: b'/etc/.ansible_tmpvxnvp3xohosts'"}
+2022-09-17 09:55:15,801 p=6427 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2022-09-17 09:55:15,801 p=6427 u=ubuntu n=ansible | app01                      : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:55:15,801 p=6427 u=ubuntu n=ansible | cntl                       : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:55:15,801 p=6427 u=ubuntu n=ansible | db01                       : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:55:15,802 p=6427 u=ubuntu n=ansible | mc01                       : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:55:15,802 p=6427 u=ubuntu n=ansible | rmq01                      : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:55:15,802 p=6427 u=ubuntu n=ansible | web01                      : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:57:22,072 p=6695 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ***
+2022-09-17 09:57:22,085 p=6695 u=ubuntu n=ansible | TASK [Gathering Facts] *********************************************************
+2022-09-17 09:57:24,061 p=6695 u=ubuntu n=ansible | ok: [web01]
+2022-09-17 09:57:24,124 p=6695 u=ubuntu n=ansible | ok: [app01]
+2022-09-17 09:57:24,207 p=6695 u=ubuntu n=ansible | ok: [rmq01]
+2022-09-17 09:57:24,229 p=6695 u=ubuntu n=ansible | ok: [mc01]
+2022-09-17 09:57:24,303 p=6695 u=ubuntu n=ansible | ok: [cntl]
+2022-09-17 09:57:25,736 p=6695 u=ubuntu n=ansible | ok: [db01]
+2022-09-17 09:57:25,759 p=6695 u=ubuntu n=ansible | TASK [Import VPC setup variables] **********************************************
+2022-09-17 09:57:25,831 p=6695 u=ubuntu n=ansible | ok: [cntl]
+2022-09-17 09:57:25,871 p=6695 u=ubuntu n=ansible | ok: [web01]
+2022-09-17 09:57:25,915 p=6695 u=ubuntu n=ansible | ok: [app01]
+2022-09-17 09:57:25,951 p=6695 u=ubuntu n=ansible | ok: [rmq01]
+2022-09-17 09:57:25,962 p=6695 u=ubuntu n=ansible | ok: [mc01]
+2022-09-17 09:57:25,981 p=6695 u=ubuntu n=ansible | ok: [db01]
+2022-09-17 09:57:25,995 p=6695 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] *************************************
+2022-09-17 09:57:26,907 p=6695 u=ubuntu n=ansible | changed: [rmq01]
+2022-09-17 09:57:26,908 p=6695 u=ubuntu n=ansible | changed: [app01]
+2022-09-17 09:57:26,908 p=6695 u=ubuntu n=ansible | changed: [mc01]
+2022-09-17 09:57:26,908 p=6695 u=ubuntu n=ansible | changed: [web01]
+2022-09-17 09:57:26,965 p=6695 u=ubuntu n=ansible | changed: [cntl]
+2022-09-17 09:57:27,242 p=6695 u=ubuntu n=ansible | changed: [db01]
+2022-09-17 09:57:27,269 p=6695 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2022-09-17 09:57:27,270 p=6695 u=ubuntu n=ansible | app01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:57:27,270 p=6695 u=ubuntu n=ansible | cntl                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:57:27,270 p=6695 u=ubuntu n=ansible | db01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:57:27,270 p=6695 u=ubuntu n=ansible | mc01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:57:27,271 p=6695 u=ubuntu n=ansible | rmq01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-09-17 09:57:27,271 p=6695 u=ubuntu n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
