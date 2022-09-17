@@ -3,6 +3,9 @@
   hosts: dbsrvgrp
   gather_facts: no
   tasks:
+    - name: Import VPC setup variables
+      include_vars: group_vars/dbsrvgrp.txt 
+      
     - name: Copy SQL to dbsrv
       copy:
         src: files/db_backup.sql
