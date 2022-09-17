@@ -28,7 +28,7 @@
         - svc
 
     - name: creating mysql user
-      mysql-user:
+      mysql_user:
         name: "{{dbuser}}"
         password: "{{dbpass}}"
         priv: '*.*:ALL'
