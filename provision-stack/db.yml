@@ -4,6 +4,9 @@
   gather_facts: no
   become: yes
   tasks:
+    - name: Import VPC setup variables
+      include_vars: group_vars/dbsrvgrp.txt
+
     - name: Installing Mysql service and dependencies
       apt:
         name: "{{item}}"
